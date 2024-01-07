@@ -11,6 +11,8 @@ async def on_ready():
 
 keep_alive()
 bot.run(os.environ['bot_token']) #運行機器人
+
+
 import json
 import requests as req
 url = "https://www.4gamers.com.tw/site/api/news/by-tag?tag=%E9%99%90%E6%99%82%E5%85%8D%E8%B2%BB&nextStart=0&pageSize=25"
