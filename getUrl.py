@@ -9,6 +9,8 @@ def getUrl(url):
     data = json.loads(res.text)
     urlPush = data["data"]["results"][0]["canonicalUrl"]
     counter = 0
+    if urlPush == last_url:
+        print("Nothing to print")
     while urlPush != last_url:
         print(urlPush)
         counter += 1
