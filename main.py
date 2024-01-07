@@ -32,7 +32,8 @@ async def job():
         print("Executing the code every 5 minutes")
         url_of_stack = getUrl(url)
         if url_of_stack:
-            channel_id = 873138797787901983  # Replace with your actual channel ID
+            #change this
+            channel_id = 123456789123456  # Replace with your actual channel ID
             channel = bot.get_channel(channel_id)
 
             if channel:

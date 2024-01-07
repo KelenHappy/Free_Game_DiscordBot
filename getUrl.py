@@ -2,7 +2,9 @@ import json
 from firebase import firebase
 import requests as req
 def getUrl(url):
-    firebase_url = 'https://freegamediscord-4d347-default-rtdb.asia-southeast1.firebasedatabase.app/'
+    #change firebase_url to yours
+    firebase_url = 'your firebase url'
+
     fdb = firebase.FirebaseApplication(firebase_url, None)
     last_url = fdb.get('/','data')
     res = req.get(url)
