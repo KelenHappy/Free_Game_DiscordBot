@@ -3,6 +3,8 @@ import os
 from getUrl import getUrl
 from keep_alive import keep_alive
 import asyncio
+import schedule
+import time  # Add this line
 from datetime import datetime, timedelta
 
 TIME_FILE_PATH = "time.txt"
@@ -14,7 +16,7 @@ def read_last_execution_time():
     try:
         with open(TIME_FILE_PATH, 'r') as file:
             content = file.read().strip()
-            if content:
+            if content and content.replace(".", "", 1).isdigit():
                 return float(content)
             else:
                 return 0
