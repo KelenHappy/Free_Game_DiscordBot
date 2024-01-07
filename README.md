@@ -1,1 +1,1 @@
-### [Get More Help](https://ithelp.ithome.com.tw/articles/10328428) 
+### [The step of install](https://ithelp.ithome.com.tw/articles/10328428) 
