@@ -28,7 +28,7 @@ def write_last_execution_time(timestamp):
         file.write(str(timestamp))
 
 async def job():
-    print("Executing the code every day at 12:00 and 24:00")
+    print("Executing the code every 5 minutes")
     getUrl(url)
     current_time = time.time()
     write_last_execution_time(current_time)
@@ -46,13 +46,11 @@ async def main():
     # Read the last execution time from the file
     last_execution_time = read_last_execution_time()
 
-    # Calculate the next scheduled execution times at 12:00 and 24:00
-    next_execution_time_12 = datetime.fromtimestamp(last_execution_time) + timedelta(hours=24)
-    next_execution_time_24 = datetime.fromtimestamp(last_execution_time) + timedelta(hours=12)
+    # Calculate the next scheduled execution time 5 minutes from now
+    next_execution_time = datetime.fromtimestamp(last_execution_time) + timedelta(minutes=5)
 
-    # Schedule the job to run at 12:00 and 24:00
-    schedule.every().day.at(next_execution_time_12.strftime("12:00")).do(job)
-    schedule.every().day.at(next_execution_time_24.strftime("00:00")).do(job)
+    # Schedule the job to run every 5 minutes
+    schedule.every(5).minutes.do(job)
 
     # Run the scheduled jobs in a loop
     await asyncio.gather(run_jobs(), bot.start(os.environ['bot_token']))
