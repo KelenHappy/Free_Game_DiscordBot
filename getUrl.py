@@ -15,7 +15,7 @@ def getUrl(url):
     while urlPush != last_url:
         print(urlPush)
         counter += 1
-        urlPush = data["data"]["results"][counter]["canonicalUrl"]
         answer_back.append(urlPush)
+        urlPush = data["data"]["results"][counter]["canonicalUrl"]
     fdb.put('/','data',data["data"]["results"][0]["canonicalUrl"])
     return answer_back
