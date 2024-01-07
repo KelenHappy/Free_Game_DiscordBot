@@ -3,8 +3,8 @@ import os
 from getUrl import getUrl
 from keep_alive import keep_alive
 import asyncio
-import schedule
-import time  # Add this line
+import aioschedule
+import time
 from datetime import datetime, timedelta
 
 TIME_FILE_PATH = "time.txt"
@@ -29,14 +29,24 @@ def write_last_execution_time(timestamp):
 
 async def job():
     print("Executing the code every 5 minutes")
-    getUrl(url)
+    url_of_stack = getUrl(url)
+    if url_of_stack:
+        channel_id = 873138797787901983  # Replace with your actual channel ID
+        channel = bot.get_channel(channel_id)
+
+        if channel:
+            for url_temp in url_of_stack:
+                message = f"New URL found: {url_temp}"
+                await channel.send(message)
+
     current_time = time.time()
     write_last_execution_time(current_time)
+
 
 async def run_jobs():
     while True:
         await asyncio.sleep(1)
-        schedule.run_pending()
+        await aioschedule.run_pending()
 
 @bot.event
 async def on_ready():
@@ -50,7 +60,7 @@ async def main():
     next_execution_time = datetime.fromtimestamp(last_execution_time) + timedelta(minutes=5)
 
     # Schedule the job to run every 5 minutes
-    schedule.every(5).minutes.do(job)
+    aioschedule.every(5).minutes.do(job)
 
     # Run the scheduled jobs in a loop
     await asyncio.gather(run_jobs(), bot.start(os.environ['bot_token']))
