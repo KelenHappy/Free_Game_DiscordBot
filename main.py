@@ -28,19 +28,24 @@ def write_last_execution_time(timestamp):
         file.write(str(timestamp))
 
 async def job():
-    print("Executing the code every 5 minutes")
-    url_of_stack = getUrl(url)
-    if url_of_stack:
-        channel_id = 873138797787901983  # Replace with your actual channel ID
-        channel = bot.get_channel(channel_id)
+    try:
+        print("Executing the code every 5 minutes")
+        url_of_stack = getUrl(url)
+        if url_of_stack:
+            channel_id = 873138797787901983  # Replace with your actual channel ID
+            channel = bot.get_channel(channel_id)
 
-        if channel:
-            for url_temp in url_of_stack:
-                message = f"New URL found: {url_temp}"
-                await channel.send(message)
+            if channel:
+                for url_temp in url_of_stack:
+                    message = f"New URL found: {url_temp}"
+                    await channel.send(message)
 
-    current_time = time.time()
-    write_last_execution_time(current_time)
+        current_time = time.time()
+        write_last_execution_time(current_time)
+
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
 
 
 async def run_jobs():
