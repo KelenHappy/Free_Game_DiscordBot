@@ -1,0 +1,6 @@
+aioschedule==0.5.2
+firebase==4.0.1
+Flask==3.0.0
+py-cord==2.4.1
+requests==2.31.0
+discord2==2.0.1
