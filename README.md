@@ -39,7 +39,7 @@ pip install requests
 ```sh
 pip install discord2  
 ```
-##Start
+##Start  
 ```sh
 python3 main.py  
 ```
