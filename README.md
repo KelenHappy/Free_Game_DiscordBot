@@ -3,4 +3,7 @@
 ### [Where can I find the Discord channel ID?](https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID-)  
 ```sh  
 $ pip install -r requerments.txt  
-```  
+```
+```sh  
+$ pip install discord2    
+```
