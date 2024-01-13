@@ -2,20 +2,20 @@
 ### [The steps to set up Firebase](https://ithelp.ithome.com.tw/articles/10335720)  
 ### [Where can I find the Discord channel ID?](https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID-)  
 ```sh
-$ pip install aioschedule  
+pip install aioschedule  
 ```
 ```sh
-$ pip install firebase  
+pip install firebase  
 ```
 ```sh
-$ pip install Flask  
+pip install Flask  
 ```
 ```sh
-$ pip install py-cord  
+pip install py-cord  
 ```
 ```sh
-$ pip install requests  
+pip install requests  
 ```
 ```sh
-$ pip install discord2  
+pip install discord2  
 ```
