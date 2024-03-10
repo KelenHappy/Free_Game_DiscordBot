@@ -30,9 +30,9 @@ async def job():
 async def on_ready():
     print(f"「{bot.user}」已登入")
 
-async def main():
+def main():
     # Run the job
-    await job()
+    asyncio.run(job())
 
-# Run the main asynchronous function
+# Run the main synchronous function
 main()
