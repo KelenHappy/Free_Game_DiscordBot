@@ -1,9 +1,6 @@
 import discord
 import os
 from getUrl import getUrl
-from keep_alive import keep_alive
-import asyncio
-from datetime import datetime
 
 url = "https://www.4gamers.com.tw/site/api/news/by-tag?tag=%E9%99%90%E6%99%82%E5%85%8D%E8%B2%BB&nextStart=0&pageSize=25"
 
@@ -38,4 +35,4 @@ async def main():
     await job()
 
 # Run the main asynchronous function
-asyncio.run(main())
+main()
