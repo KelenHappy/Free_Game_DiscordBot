@@ -1,5 +1,6 @@
 import discord
 import os
+import asyncio  # 添加這一行
 from getUrl import getUrl
 
 url = "https://www.4gamers.com.tw/site/api/news/by-tag?tag=%E9%99%90%E6%99%82%E5%85%8D%E8%B2%BB&nextStart=0&pageSize=25"
