@@ -39,7 +39,7 @@ pip install discord2
 ```
 ## Start  
 ```sh
-export bot_token=YOURTOKEN  
+export BOT_TOKEN=YOURTOKEN  
 ```
 ```sh
 python3 main.py  
