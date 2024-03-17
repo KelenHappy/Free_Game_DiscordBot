@@ -4,7 +4,6 @@ import requests as req
 def getUrl(url):
     #change firebase_url to yours
     firebase_url = 'your firebase url'
-
     fdb = firebase.FirebaseApplication(firebase_url, None)
     last_url = fdb.get('/','data')
     res = req.get(url)
