@@ -18,6 +18,9 @@ source venv/bin/activate
 ```sh
 pip install firebase  
 ```
+```sh
+pip install asyncio
+```
 
 ```sh
 pip install Flask  
