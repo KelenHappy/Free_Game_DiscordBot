@@ -47,7 +47,7 @@ python3 main.py
 ```
 
 These instructions guide you through the process of setting up a Discord bot locally, including steps for Discord and Firebase setup, as well as the installation of necessary Python packages within a virtual environment. The final section provides commands to start the bot with the specified token.  
-
+---------------------------------------------------------------------
 ### [設置 Firebase 的步驟](https://ithelp.ithome.com.tw/articles/10335720)  
 ### [如何找到 Discord 頻道 ID？](https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID-)
 
