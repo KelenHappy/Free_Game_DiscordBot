@@ -1,4 +1,4 @@
-[English](#the-steps-to-set-up-firebase) | [中文](#設置指南)
+[English](#the-steps-to-set-up-firebase) | [中文](#設置-Firebase-的步驟)
 ### [The steps to set up Firebase](https://ithelp.ithome.com.tw/articles/10335720)  
 ### [Where can I find the Discord channel ID?](https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID-)  
 ## Install(Local Deployment)  
