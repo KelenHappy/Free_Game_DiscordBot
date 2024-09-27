@@ -5,7 +5,7 @@
 ## Install(Local Deployment)  
 ### bash (using WSL)
 ```sh
-cd path/to/your/project 
+cd path/to/your/main.py 
 ```
 
 ```sh
@@ -40,7 +40,7 @@ These instructions guide you through the process of setting up a Discord bot loc
 
 ### bash（使用 WSL）
 ```sh
-cd path/to/your/project 
+cd path/to/your/main.py 
 ```
 
 ```sh
