@@ -1,5 +1,7 @@
 [English](#Free_Game_DiscordBot) | [中文](#Discord免費遊戲機器人)
 # Free_Game_DiscordBot  
+## Before Start  
+###[Create Discord Bot](https://discord.com/developers/applications)  
 ### [The steps to set up Firebase](https://ithelp.ithome.com.tw/articles/10335720)  
 ### [Where can I find the Discord channel ID?](https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID-)  
 ## Install(Local Deployment)  
