@@ -23,7 +23,7 @@ pip install -r requirements.txt
 
 ## Start  
 ```sh
-export BOT_TOKEN=YOURTOKEN  
+export BOT_TOKEN=YourDiscordBotToken  
 ```
 ```sh
 python3 main.py  
@@ -57,7 +57,7 @@ pip install -r requirements.txt
 
 ## 開始執行
 ```sh
-export BOT_TOKEN=YOURTOKEN  
+export BOT_TOKEN=YourDiscordBotToken  
 ```
 ```sh
 python3 main.py  
