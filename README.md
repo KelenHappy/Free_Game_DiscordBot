@@ -18,27 +18,9 @@ source venv/bin/activate
 
 ### Virtual Environment
 ```sh
-pip install firebase  
-```
-```sh
-pip install asyncio
+pip install -r requirements.txt
 ```
 
-```sh
-pip install Flask  
-```
-
-```sh
-pip install py-cord  
-```
-
-```sh
-pip install requests  
-```
-
-```sh
-pip install discord2  
-```
 ## Start  
 ```sh
 export BOT_TOKEN=YOURTOKEN  
@@ -69,27 +51,9 @@ source venv/bin/activate
 ```
 ### 虛擬環境(venv內)
 ```sh
-pip install firebase  
-```
-```sh
-pip install asyncio
+pip install -r requirements.txt 
 ```
 
-```sh
-pip install Flask  
-```
-
-```sh
-pip install py-cord  
-```
-
-```sh
-pip install requests  
-```
-
-```sh
-pip install discord2  
-```
 ## 開始執行
 ```sh
 export BOT_TOKEN=YOURTOKEN  
