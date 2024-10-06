@@ -1,5 +1,5 @@
 [English](#Free_Game_DiscordBot) | [中文](#Discord免費遊戲機器人)
-# Free_Game_DiscordBot  
+# Free_Game_DiscordBot(Don't use Python12)  
 ## Before Start  
 ### [Create Discord Bot](https://discord.com/developers/applications)  
 ### [The steps to set up Firebase](https://ithelp.ithome.com.tw/articles/10335720)  
