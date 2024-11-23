@@ -4,6 +4,7 @@
 ### [Create Discord Bot](https://discord.com/developers/applications)  
 ### [The steps to set up Firebase](https://ithelp.ithome.com.tw/articles/10335720)  
 ### [Where can I find the Discord channel ID?](https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID-)  
+### You need to read main.py and getUrl.py first, and then modify the code inside them.   
 ## Install(Local Deployment)  
 ### bash (using WSL)
 
@@ -44,6 +45,7 @@ These instructions guide you through the process of setting up a Discord bot loc
 ### [創建DiscordBot](https://discord.com/developers/applications)  
 ### [設置 Firebase 的步驟](https://ithelp.ithome.com.tw/articles/10335720)  
 ### [如何找到 Discord 頻道 ID？](https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID-)
+### 你必須先閱讀 main.py 和 getUrl.py，然後修改裡面的程式碼。  
 
 ## 安裝（本地部署）
 
