@@ -6,6 +6,11 @@
 ### [Where can I find the Discord channel ID?](https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID-)  
 ## Install(Local Deployment)  
 ### bash (using WSL)
+
+```sh
+git clone https://github.com/KelenHappy/Free_Game_DiscordBot.git
+```
+
 ```sh
 cd path/to/your/main.py 
 ```
@@ -43,6 +48,11 @@ These instructions guide you through the process of setting up a Discord bot loc
 ## 安裝（本地部署）
 
 ### bash（使用 WSL）
+
+```sh
+git clone https://github.com/KelenHappy/Free_Game_DiscordBot.git
+```
+
 ```sh
 cd path/to/your/main.py 
 ```
