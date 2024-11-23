@@ -1,6 +1,5 @@
 firebase
 asyncio
-Flask
 py-cord
 requests
 discord2
