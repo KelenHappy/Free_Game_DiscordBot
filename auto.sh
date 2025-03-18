@@ -5,6 +5,6 @@ run_task(){
   python3 main.py
 }
 while true; do
-  run_task()
+  run_task
   sleep 60
 done
