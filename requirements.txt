@@ -1,5 +1,4 @@
-firebase==4.0.1
+firebase-admin
 asyncio==3.4.3
 py-cord==2.6.1
 requests==2.32.3
-discord2==2.0.1
