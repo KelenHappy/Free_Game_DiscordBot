@@ -29,10 +29,13 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## Start  
-```sh
-export BOT_TOKEN=YourDiscordBotToken  
-```
+## Modification
+
+  1. Modify the BOT_TOKEN in start.sh.
+  2. Go to Firebase Project Settings -> Service Accounts -> Python -> Generate New Private Key.
+  3. Rename the JSON file to serviceAccountKey.json.
+
+## Start
 ```sh
 ./start.sh
 ```
@@ -71,10 +74,11 @@ source venv/bin/activate
 pip install -r requirements.txt 
 ```
 
+## 修改
+  1. 修改start.sh裡的BOT_TOKEN
+  2. FireBase專案設定 -> 服務帳戶 -> Python -> 產生新的密鑰
+  3. 重新命名json FIle，改成 serviceAccountKey.json  
 ## 開始執行
-```sh
-export BOT_TOKEN=YourDiscordBotToken  
-```
 ```sh
 ./start.sh
 ```
