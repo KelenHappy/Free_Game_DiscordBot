@@ -3,7 +3,7 @@ import os
 import asyncio
 from getUrl import getUrl
 
-url = "https://www.4gamers.com.tw/site/api/news/by-category/1118?nextStart=0&pageSize=25"
+url = "https://www.4gamers.com.tw/site/api/news/of-category/1118?nextStart=0&pageSize=25"
 
 bot = discord.Bot(intents=discord.Intents.all())
 
