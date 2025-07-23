@@ -15,7 +15,9 @@ async def job():
         url_of_stack = await loop.run_in_executor(None, getUrl, url)
         
         if url_of_stack:
-            channel_id = 111111111111111111111111  # Replace with your actual channel ID
+            # Replace with your actual channel ID
+            # 更換你的頻道ID
+            channel_id = 111111111111111111111111  
             channel = bot.get_channel(channel_id)
             if channel:
                 for url_temp in url_of_stack:
