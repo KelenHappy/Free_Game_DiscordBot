@@ -39,7 +39,10 @@ def getUrl(url):
         else:
             # If no last URL is found, return the first new URL
             answer_back = [new_urls[0]]  
-
+            
+        #Reverse the answer_back
+        answer_back = answer_back[::-1]
+        
         # Update the last URL in the database if new URLs were found
         if answer_back:
             ref.update({'data': new_urls[0]})
