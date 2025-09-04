@@ -1,4 +1,4 @@
-[English](#Free_Game_DiscordBot) | [中文](#Discord免費遊戲機器人)
+[English](#Free_Game_DiscordBot) | [中文](#Discord免費遊戲機器人) | [Termux](#Termux)
 # Free_Game_DiscordBot   
 ## Before Start  
 ### [Create Discord Bot](https://discord.com/developers/applications)  
@@ -6,7 +6,7 @@
 ### [Where can I find the Discord channel ID?](https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID-)  
 ### You need to read main.py and getUrl.py first, and then modify the code inside them.   
 ## Install(Local Deployment)  
-### bash (using WSL or Linux) [Termux](#Termux)
+### bash (using WSL or Linux) 
 
 ```sh
 git clone https://github.com/KelenHappy/Free_Game_DiscordBot.git
@@ -86,7 +86,7 @@ pip install -r requirements.txt
 這些說明將引導您完成本地設置 Discord 機器人的過程，包括 Discord 和 Firebase 的設置步驟，以及在虛擬環境中安裝所需的 Python 套件。最後一節提供了用指定令牌啟動機器人的命令。  
 
 # Termux  
-Because some [problems](https://github.com/termux/termux-packages/issues/17583), you need to follow this to install. 
+Because there are some [problems](https://github.com/termux/termux-packages/issues/17583), you need to follow these steps to install.   
 ## Install   
 ```sh
 pkg install python-static rust python-grpcio
