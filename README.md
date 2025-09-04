@@ -13,7 +13,7 @@ git clone https://github.com/KelenHappy/Free_Game_DiscordBot.git
 ```
 
 ```sh
-cd path/to/your/main.py 
+cd Free_Game_DiscordBot 
 ```
 
 ```sh
@@ -59,7 +59,7 @@ git clone https://github.com/KelenHappy/Free_Game_DiscordBot.git
 ```
 
 ```sh
-cd path/to/your/main.py 
+cd Free_Game_DiscordBot 
 ```
 
 ```sh
@@ -98,7 +98,7 @@ git clone https://github.com/KelenHappy/Free_Game_DiscordBot.git
 ```
 
 ```sh
-cd path/to/your/main.py 
+cd Free_Game_DiscordBot 
 ```
 
 ```sh
