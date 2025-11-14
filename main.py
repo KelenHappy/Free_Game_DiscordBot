@@ -3,6 +3,11 @@ import os
 import asyncio
 from getUrl import getUrl
 
+try:
+    asyncio.get_event_loop()
+except RuntimeError:
+    asyncio.set_event_loop(asyncio.new_event_loop())
+
 url = "https://www.4gamers.com.tw/site/api/news/of-category/1118?nextStart=0&pageSize=25"
 
 bot = discord.Bot(intents=discord.Intents.all())
@@ -10,13 +15,10 @@ bot = discord.Bot(intents=discord.Intents.all())
 async def job():
     try:
         print("Executing the code")
-        # If getUrl is synchronous, use run_in_executor
         loop = asyncio.get_event_loop()
         url_of_stack = await loop.run_in_executor(None, getUrl, url)
         
         if url_of_stack:
-            # Replace with your actual channel ID
-            # 更換你的頻道ID
             channel_id = 111111111111111111111111  
             channel = bot.get_channel(channel_id)
             if channel:
@@ -31,14 +33,13 @@ async def job():
     except Exception as e:
         print(f"An error occurred: {e}")
     finally:
-        await bot.close()  # Close the bot
+        await bot.close()
 
 @bot.event
 async def on_ready():
     print(f"「{bot.user}」has logged in")
-    await job()  # Execute job once the bot is ready
+    await job()
 
-# Run the bot
 async def main():
     await bot.start(os.getenv("BOT_TOKEN"))
 
