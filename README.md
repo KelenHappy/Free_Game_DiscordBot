@@ -89,8 +89,11 @@ pip install -r requirements.txt
 Because there are some [problems](https://github.com/termux/termux-packages/issues/17583), you need to follow these steps to install.   
 ## Install   
 
-```s
+```sh
 pkg upgrade 
+```
+
+```sh
 pkg install python-static rust python-grpcio python-cryptography
 ```
 
