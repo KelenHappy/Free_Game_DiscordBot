@@ -7,7 +7,6 @@ from getUrl import getUrl
 url = "https://www.4gamers.com.tw/site/api/news/of-category/1118?nextStart=0&pageSize=25"
 # Replace with your actual channel ID
 CHANNEL_ID = 111111111111111111111111 
-bot = discord.Bot(intents=discord.Intents.all())
 
 async def job(bot):
     try:
