@@ -111,8 +111,7 @@ func GetURL(apiURL string) ([]string, error) {
 			}
 			answerBack = append(answerBack, u)
 		}
-	}
-	else {
+	}else {
 		// No stored URL yet — return only the first (latest) entry
 		answerBack = []string{newURLs[0]}
 	}
