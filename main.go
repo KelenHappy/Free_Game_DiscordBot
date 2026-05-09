@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 	"os"
-
+	"time"
 	"github.com/bwmarrin/discordgo"
 	"github.com/joho/godotenv"
 )
@@ -29,12 +29,13 @@ func runJob(s *discordgo.Session) {
 	}
 
 	for _, u := range urls {
-		message := fmt.Sprintf("New URL found: %s", u)
-		if _, err := s.ChannelMessageSend(channelID, message); err != nil {
-			log.Printf("Failed to send message: %v", err)
-		} else {
-			fmt.Println(u)
-		}
+    	message := fmt.Sprintf("New URL found: %s", u)
+	    if _, err := s.ChannelMessageSend(channelID, message); err != nil {
+	        log.Printf("Failed to send message: %v", err)
+	    } else {
+	        fmt.Println(u)
+	    }
+	    time.Sleep(200 * time.Millisecond)
 	}
 
 	fmt.Println("Job completed.")
