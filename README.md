@@ -12,9 +12,10 @@ git clone https://github.com/KelenHappy/Free_Game_DiscordBot.git
 ```
 
 ```sh
-cd Free_Game_DiscordBot 
+cd Free_Game_DiscordBot
+go mod tidy
 ```
-
+## Run
 ```sh
 go run .
 ```
@@ -43,9 +44,10 @@ git clone https://github.com/KelenHappy/Free_Game_DiscordBot.git
 ```
 
 ```sh
-cd Free_Game_DiscordBot 
+cd Free_Game_DiscordBot
+go mod tidy
 ```
-
+## Run
 ```sh
 go run .
 ```
