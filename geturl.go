@@ -6,6 +6,8 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"os"
+	"time"
 
 	firebase "firebase.google.com/go/v4"
 	"firebase.google.com/go/v4/db"
@@ -21,9 +23,14 @@ func initFirebase() error {
 		return nil
 	}
 
-	opt := option.WithCredentialsFile("serviceAccountKey.json")
+	credPath := os.Getenv("FIREBASE_CREDENTIALS")
+	if credPath == "" {
+		credPath = "serviceAccountKey.json"
+	}
+	opt := option.WithCredentialsFile(credPath)
+	dbURL := os.Getenv("FIREBASE_DB_URL")
 	config := &firebase.Config{
-		DatabaseURL: "your firebase url", // Change to your Firebase URL
+		DatabaseURL: dbURL, // Set via env FIREBASE_DB_URL
 	}
 
 	app, err := firebase.NewApp(context.Background(), config, opt)
@@ -69,7 +76,15 @@ func GetURL(apiURL string) ([]string, error) {
 	lastURL := stored.Data
 
 	// 2. Fetch the API
-	resp, err := http.Get(apiURL) //nolint:gosec
+	// Use a short context timeout and http client to avoid hangs
+	reqCtx, cancel := context.WithTimeout(ctx, 10*time.Second)
+	defer cancel()
+	req, err := http.NewRequestWithContext(reqCtx, http.MethodGet, apiURL, nil)
+	if err != nil {
+		return nil, fmt.Errorf("REQUEST ERROR: %w", err)
+	}
+	client := &http.Client{Timeout: 10 * time.Second}
+	resp, err := client.Do(req) //nolint:gosec
 	if err != nil {
 		return nil, fmt.Errorf("REQUEST ERROR: %w", err)
 	}
