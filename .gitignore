@@ -1,0 +1,32 @@
+# Environment files
+.env
+.env.*
+
+# Firebase service account
+serviceAccountKey.json
+serviceAccountKey*.json
+
+# OS files
+.DS_Store
+
+# Editors/IDE
+.vscode/
+.idea/
+
+# Binaries and build outputs
+bin/
+vendor/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Logs, databases, coverage
+*.log
+*.db
+coverage.out
+
+# Misc
+*.key
+*.pem
