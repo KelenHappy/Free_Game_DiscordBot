@@ -21,7 +21,7 @@ go run .
 
 ## Rountine
 ```
-sudo nano /etc/systemd/system/dcbot.service
+sudo micro /etc/systemd/system/dcbot.service
 ```
 ```
 [Unit]
@@ -33,7 +33,7 @@ WorkingDirectory=/path/to/your/Free_Game_DiscordBot
 ExecStart=/path/to/your/bot/dcbot
 ```
 ```
-sudo nano /etc/systemd/system/dcbot.timer
+sudo micro /etc/systemd/system/dcbot.timer
 ```
 ```
 [Unit]
@@ -88,7 +88,7 @@ go run .
 ```
 ## Rountine
 ```
-sudo nano /etc/systemd/system/dcbot.service
+sudo micro /etc/systemd/system/dcbot.service
 ```
 ```
 [Unit]
@@ -100,7 +100,7 @@ WorkingDirectory=/path/to/your/Free_Game_DiscordBot
 ExecStart=/path/to/your/bot/dcbot
 ```
 ```
-sudo nano /etc/systemd/system/dcbot.timer
+sudo micro /etc/systemd/system/dcbot.timer
 ```
 ```
 [Unit]
