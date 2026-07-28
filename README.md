@@ -21,6 +21,9 @@ go run .
 
 ## Rountine
 ```
+go build -o dcbot .
+```
+```
 sudo micro /etc/systemd/system/dcbot.service
 ```
 ```
@@ -87,6 +90,9 @@ go mod tidy
 go run .
 ```
 ## Rountine
+```
+go build -o dcbot .
+```
 ```
 sudo micro /etc/systemd/system/dcbot.service
 ```
