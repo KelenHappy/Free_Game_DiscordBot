@@ -19,6 +19,42 @@ go mod tidy
 go run .
 ```
 
+## Rountine
+```
+sudo nano /etc/systemd/system/dcbot.service
+```
+```
+[Unit]
+Description=Discord Bot Job
+
+[Service]
+Type=oneshot
+WorkingDirectory=/path/to/your/Free_Game_DiscordBot
+ExecStart=/path/to/your/bot/dcbot
+```
+```
+sudo nano /etc/systemd/system/dcbot.timer
+```
+```
+[Unit]
+Description=Run dcbot every hour
+
+[Timer]
+OnCalendar=hourly
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+```
+```
+sudo systemctl daemon-reload
+sudo systemctl enable --now dcbot.timer
+```
+```
+systemctl status dcbot.timer
+systemctl list-timers dcbot.timer
+journalctl -u dcbot.service
+```
 ## Modification
 
   1. Copy `.env.example` to `.env` and fill in your `BOT_TOKEN`, `CHANNEL_ID`, `FIREBASE_DB_URL`.
@@ -50,7 +86,42 @@ go mod tidy
 ```sh
 go run .
 ```
+## Rountine
+```
+sudo nano /etc/systemd/system/dcbot.service
+```
+```
+[Unit]
+Description=Discord Bot Job
 
+[Service]
+Type=oneshot
+WorkingDirectory=/path/to/your/Free_Game_DiscordBot
+ExecStart=/path/to/your/bot/dcbot
+```
+```
+sudo nano /etc/systemd/system/dcbot.timer
+```
+```
+[Unit]
+Description=Run dcbot every hour
+
+[Timer]
+OnCalendar=hourly
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+```
+```
+sudo systemctl daemon-reload
+sudo systemctl enable --now dcbot.timer
+```
+```
+systemctl status dcbot.timer
+systemctl list-timers dcbot.timer
+journalctl -u dcbot.service
+```
 ## 修改
   1. 複製 `.env.example` 為 `.env`，填入你的 `BOT_TOKEN`、`CHANNEL_ID`、`FIREBASE_DB_URL`。
   2. Firebase 專案設定 -> 服務帳戶 -> **Go** -> 產生新的密鑰。
