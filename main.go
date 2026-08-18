@@ -4,14 +4,32 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"os/signal"
+	"strconv"
+	"syscall"
 	"time"
+
 	"github.com/bwmarrin/discordgo"
 	"github.com/joho/godotenv"
 )
 
 const (
-	apiURL = "https://www.4gamers.com.tw/site/api/news/of-category/1118?nextStart=0&pageSize=25"
+	apiURL              = "https://www.4gamers.com.tw/site/api/news/of-category/1118?nextStart=0&pageSize=25"
+	defaultCheckMinutes = 30
 )
+
+func checkInterval(value string) (time.Duration, error) {
+	if value == "" {
+		return defaultCheckMinutes * time.Minute, nil
+	}
+
+	minutes, err := strconv.Atoi(value)
+	if err != nil || minutes <= 0 || minutes > int(time.Duration(1<<63-1)/time.Minute) {
+		return 0, fmt.Errorf("CHECK_INTERVAL_MINUTES must be a positive integer, got %q", value)
+	}
+
+	return time.Duration(minutes) * time.Minute, nil
+}
 
 func runJob(s *discordgo.Session, channelID string) {
 	fmt.Println("Executing the code")
@@ -60,20 +78,44 @@ func main() {
 		log.Fatal("CHANNEL_ID environment variable not set.")
 	}
 
-	done := make(chan struct{})
+	interval, err := checkInterval(os.Getenv("CHECK_INTERVAL_MINUTES"))
+	if err != nil {
+		log.Fatal(err)
+	}
 
-	// On ready: execute job then close
+	ready := make(chan struct{}, 1)
 	dg.AddHandler(func(s *discordgo.Session, r *discordgo.Ready) {
 		fmt.Printf("「%s」has logged in\n", s.State.User.Username)
-		runJob(s, channelID)
-		dg.Close()
-		close(done)
+		select {
+		case ready <- struct{}{}:
+		default:
+		}
 	})
 
 	// Open connection
 	if err := dg.Open(); err != nil {
 		log.Fatalf("Error opening Discord connection: %v", err)
 	}
+	defer dg.Close()
 
-	<-done
+	<-ready
+	log.Printf("Checking for free games every %s.", interval)
+	runJob(dg, channelID)
+
+	ticker := time.NewTicker(interval)
+	defer ticker.Stop()
+
+	stop := make(chan os.Signal, 1)
+	signal.Notify(stop, os.Interrupt, syscall.SIGTERM)
+	defer signal.Stop(stop)
+
+	for {
+		select {
+		case <-ticker.C:
+			runJob(dg, channelID)
+		case <-stop:
+			log.Println("Shutting down.")
+			return
+		}
+	}
 }
