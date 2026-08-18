@@ -15,6 +15,8 @@ go mod tidy
 ```sh
 go run .
 ```
+The bot checks once immediately after connecting, then checks again at the interval configured by `CHECK_INTERVAL_MINUTES`. The default is 30 minutes. For example, set `CHECK_INTERVAL_MINUTES=60` in `.env` to check hourly. The value must be a positive whole number.
+
 ## Routine
 ```sh
 go build -o dcbot .
@@ -82,6 +84,8 @@ go mod tidy
 ```sh
 go run .
 ```
+Bot 連線後會立即檢查一次，之後按 `CHECK_INTERVAL_MINUTES` 設定的間隔持續檢查，預設為 30 分鐘。例如在 `.env` 設定 `CHECK_INTERVAL_MINUTES=60` 即可每小時檢查一次；該值必須是正整數。
+
 ## Routine
 ```sh
 go build -o dcbot .
