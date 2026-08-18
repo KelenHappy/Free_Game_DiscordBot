@@ -1,4 +1,4 @@
-module discord-news-bot
+module github.com/KelenHappy/Free_Game_DiscordBot
 
 go 1.26.4
 
